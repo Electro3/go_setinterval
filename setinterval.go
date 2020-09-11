@@ -6,7 +6,6 @@ import (
 )
 
 func Start (someFunc func(), milliseconds int, async bool) chan bool {
-
   // How often to fire the passed in function 
   // in milliseconds
   interval := time.Duration(milliseconds) * time.Millisecond
@@ -15,7 +14,6 @@ func Start (someFunc func(), milliseconds int, async bool) chan bool {
   // the ending of the interval
   ticker := time.NewTicker(interval)
   clear := make(chan bool)
-
   // Put the selection in a go routine
   // so that the for loop is none blocking
   go func() {
@@ -35,7 +33,6 @@ func Start (someFunc func(), milliseconds int, async bool) chan bool {
       }
     }
   }()
-
   // We return the channel so we can pass in 
   // a value to it to clear the interval
   return clear
