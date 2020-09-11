@@ -1,11 +1,11 @@
-package setInterval
+package setinterval
 
 
 import (
   "time"
 )
 
-func setInterval(someFunc func(), milliseconds int, async bool) chan bool {
+func Start (someFunc func(), milliseconds int, async bool) chan bool {
 
   // How often to fire the passed in function 
   // in milliseconds
